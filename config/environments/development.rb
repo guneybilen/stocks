@@ -38,4 +38,24 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  
+  
+  # below this my additions for email configurations:
+  config.action_mailer.default_url_options = { :host => "https://stocks-guneybilen.c9users.io/" }
+
+  # Email configuration
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+
+  # Gmail SMTP server setup
+  ActionMailer::Base.smtp_settings = {
+    :address => "smtp.gmail.com",
+    :enable_starttls_auto => true,
+    :port => 587,
+    :authentication => :plain,
+    :user_name => ENV['GOOGLE_USER'],
+    :password => ENV['GOOGLE_PASS']
+  }
+
 end
