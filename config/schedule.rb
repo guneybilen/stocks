@@ -21,6 +21,10 @@
 
 set :environment, "development"
  
-every '* 19-22 * * 6' do 
-    rake "load_page"
+# every :weekend, :at => "20:00, 21:00, 22:00, 23:00, 24:00"  do 
+#   rake "load_page"
+# end
+
+every :weekday, :at => "08:00, 09:00, 10:00, 11:00, 12:00, 13:00, 14:00, 15:00, 16:00"  do 
+  rake "load_page"
 end
