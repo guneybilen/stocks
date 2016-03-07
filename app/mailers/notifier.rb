@@ -5,8 +5,9 @@ class Notifier < ApplicationMailer
   #
   #   en.notifier.email_friend.subject
   #
-  def email_friend(ary)
+  def email_friend(ary, note=nil)
     @ary = ary
+    @note = note
 
     mail to: "guneybilen@yahoo.com", subject: "Good News"
   end

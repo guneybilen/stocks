@@ -22,11 +22,11 @@ task load_page: :environment do
         
         #   puts lowest.to_f
           @have_stock = true
-          File.open("big-para.html", "a") do |f|
+          # File.open("big-para.html", "a") do |f|
             # f.puts("Hisse: " + name + " fiyat: " + price + " taban: " + lowest + " tavan: " + highest)
              @ary << "Hisse: #{name},  Fiyat:  #{price},  Taban:  #{lowest},  Tavan: #{highest} "
             # @ary << {"Hisse: " => name, "Fiyat: " => price, "Taban: " => lowest, "Tavan: " => highest}
-          end
+          # end
           
       end 
       
@@ -39,7 +39,7 @@ task load_page: :environment do
       # f.puts(@ary)
     # end
   else
-    sorry = "Su an avantajli bir hisse yok!"
+    sorry = "BIST'de su an avantajli bir hisse yok!"
     Notifier.email_bad_news(sorry).deliver
   end
       
