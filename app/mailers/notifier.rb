@@ -8,12 +8,12 @@ class Notifier < ApplicationMailer
   def email_friend(ary)
     @ary = ary
 
-    mail to: "guneybilen@yahoo.com"
+    mail to: "guneybilen@yahoo.com", subject: "Good News"
   end
   
   def email_bad_news(sorry)
     @sorry = sorry
     
-    mail to: "guneybilen@yahoo.com"
+    mail to: "guneybilen@yahoo.com", subject: "Bad News"
   end
 end
