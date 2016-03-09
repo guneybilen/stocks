@@ -39,8 +39,8 @@ task load_page: :environment do
       # f.puts(@ary)
     # end
   else
-    sorry = "BIST'de su an avantajli bir hisse yok!"
-    Notifier.email_bad_news(sorry).deliver
+    # sorry = "BIST'de su an avantajli bir hisse yok!"
+    # Notifier.email_bad_news(sorry).deliver
   end
       
   #stock_names = doc.xpath('//ul/@data-symbol')[0]
